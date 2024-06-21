@@ -1,7 +1,8 @@
 const fdk = require("@fnproject/fdk");
 const { getData } = require("./getObj");
+require("dotenv").config();
 
-fdk.handle(function (input) {
+fdk.handle(async function (input) {
   const POST = "post";
   const GET = "get";
   const DELETE = "delete";
@@ -9,8 +10,9 @@ fdk.handle(function (input) {
   try {
     if (input === GET) {
       console.log("get method");
-      getData();
+      result = await getData();
     }
+    return result;
   } catch (error) {
     return error;
   }
