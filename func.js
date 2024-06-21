@@ -10,7 +10,7 @@ fdk.handle(async function (input) {
   try {
     if (input === GET) {
       console.log("get method");
-      result = await getData();
+      result = await getData(); // result {"objects":[{"name":"111testpdf-test.pdf"},{"name":"111test●2024年作業報告書_蔡有淨.xlsx"},{"name":"test-object-pdfpdf-test.pdf"}]}
     }
     return result;
   } catch (error) {
