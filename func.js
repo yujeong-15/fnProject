@@ -1,10 +1,17 @@
 const fdk = require("@fnproject/fdk");
+const { getData } = require("./getObj");
 
 fdk.handle(function (input) {
-  let name = "World";
-  if (input.name) {
-    name = input.name;
+  const POST = "post";
+  const GET = "get";
+  const DELETE = "delete";
+  const PUT = "put";
+  try {
+    if (input === GET) {
+      console.log("get method");
+      getData();
+    }
+  } catch (error) {
+    return error;
   }
-  console.log("\nInside Node Hello World function");
-  return { message: "Hello " + name };
 });
